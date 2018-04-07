@@ -12,8 +12,7 @@ With this extension you can:
 ### Usage
 This extension is unpacked, you can find necessary steps in [Getting Started Tutorial](https://developer.chrome.com/extensions/getstarted) by Google.
 
-Set castom avatar and message in the extension options (press on extension icon to see them).
-
+Set custom avatar and message in the extension options (press on extension icon to see them).
 After setup extension can be hidden in the Chrome menu.
 
 ### Unwanted software
