@@ -21,7 +21,7 @@ This extension is unpacked and not registered in the Chrome Web Store. That mean
 I have no bad intension but I suggest you check the code by yourself.
 
 ### TODOs
-- [x] Add core fetures
+- [x] Add core features
 - [ ] Add stock price graph
 - [ ] Add future price prediction model
 - [ ] Package the extension properly
