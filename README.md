@@ -7,12 +7,15 @@ With this extension you can:
 - improve UI a bit (some parts are just unnecessary, while others just can be made better);
 - add basic stats about Manna stock.
 
+The result will look something like [this](https://fabritsius.github.io/mannabase-extension/imgs/mannabase-extension.png).
+
 (All changes above are optional).
 
 ### Usage
 This extension is unpacked, you can find necessary steps in [Getting Started Tutorial](https://developer.chrome.com/extensions/getstarted) by Google.
 
 Set custom avatar and message in the extension options (press on extension icon to see them).
+
 After setup extension can be hidden in the Chrome menu.
 
 ### Unwanted software
