@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "Mannabase Dashboard",
+  "version": "0.1.0",
+  "description": "This extension improves Mannabase Dashboard UI.",
+  "icons": { "128": "icon.ico" },
+  "content_scripts": [
+    { 
+      "matches": ["https://www.mannabase.com/dashboard/"], 
+      "js": ["content.js"] 
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "permissions": ["storage"],
+  "web_accessible_resources": ["more.png"]
+}

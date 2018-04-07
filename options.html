@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Test Extension Options</title>
+  <meta charset="utf-8">
+  <style>
+    body { 
+      padding: 10px;
+      padding-top: 0px;
+    }
+    div {
+      display: block;
+      margin-top: 10px;
+      marker-bottom: 10px;
+    }
+    input {
+      width: 100%;
+    }
+    #status {
+      text-align: right;
+      visibility:hidden;
+    }
+    #confirm-area button {
+      float: right;
+      margin-left: 5px;
+    }
+    #username-area {
+      color: grey;
+    }
+    #username-area span {
+      text-decoration: underline;
+    }
+    .barely-visible {
+      color: #d4d4d4;
+      font-size: 12px; 
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p id="username-area">user: <span id="username" contenteditable="true"></span></p>
+  </div>
+  <div>
+    <label>
+      Enter custom welcome message:
+      <input type="text" id="customGreeting" placeholder="Welcome, [your name]">
+    </label>
+  </div>
+  <div>
+    <label>
+      Enter custom avatar URL:
+      <input type="text" id="customAvatar" placeholder="https://www.example.com/avatar.png">
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="checkbox" id="improveUI" checked>
+      Improve UI?
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="checkbox" id="addMarketStats" checked>
+      Add Market Stats?
+    </label>
+  </div>
+  <div id="confirm-area">
+    <div id="status"><span style="color: green;">✓</span> Options saved.</div>
+    <button id="save">Save</button>
+  </div>
+  <div class="barely-visible" style="margin-top: 40px">
+    <p>Support me by sending some Manna to:<br>GbgUmxrzEop8RZ5kxTKckjptQnhdoEJQBJ</p>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
