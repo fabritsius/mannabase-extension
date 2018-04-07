@@ -18,7 +18,7 @@ After setup extension can be hidden in the Chrome menu.
 ### Unwanted software
 This extension is unpacked and not registered in the Chrome Web Store. That means it should be marked as **unwanted software**. Please read [this article on this topic](https://developer.chrome.com/apps/external_extensions) for more.
 
-I have no bad intension but I suggest you check the code by yourself.
+I have no bad intentions but I suggest you check the code by yourself.
 
 ### TODOs
 - [x] Add core features
