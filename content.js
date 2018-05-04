@@ -33,7 +33,7 @@ function load(username) {
     }
     // add basic market statistics to the page
     if (items.addMarketStats) {
-      const request = "https://api.coinmarketcap.com/v1/ticker/manna/";
+      const request = "https://api.coinmarketcap.com/v2/ticker/1019/";
       fetch(request)
         .then(response => response.json())
         .then(function(responseJSON) {
@@ -87,7 +87,7 @@ function improveUI() {
 
 function addMarketStats(statsJSON) {
   // add basic market statistics to the side column
-  const stats = statsJSON[0];
+  const stats = statsJSON.data;
 
   const sidePart = document.getElementsByClassName('col-md-5 float-right-md')[0];
   const statsContainer = document.createElement('div');
@@ -123,8 +123,8 @@ function addMarketStats(statsJSON) {
   priceBox.style.width = '100%';
   priceBox.style.textAlign = 'left';
   priceBox.style['font-size'] = '14px';
-  priceBox.innerHTML = `<p>Price: &nbsp<span style="font-size: 25px">$${parseFloat(stats.price_usd).toPrecision(4)}</span> USD 
-  <span style="font-size: 25px" id="change24h">(${parseFloat(stats.percent_change_24h).toFixed(2)} %)</span></p>`;
+  priceBox.innerHTML = `<p>Price: &nbsp<span style="font-size: 25px">$${parseFloat(stats.quotes.USD.price).toPrecision(4)}</span> USD 
+  <span style="font-size: 25px" id="change24h">(${parseFloat(stats.quotes.USD.percent_change_24h).toFixed(2)} %)</span></p>`;
   statsCard.appendChild(priceBox);
 
   const rankBox = document.createElement('div');
@@ -136,23 +136,23 @@ function addMarketStats(statsJSON) {
   const capBox = document.createElement('div');
   capBox.style.width = '50%';
   capBox.style.padding = '10px 0px';
-  capBox.innerHTML = `<h6>Market Cap</h6><p>$${parseFloat(stats.market_cap_usd)
+  capBox.innerHTML = `<h6>Market Cap</h6><p>$${parseFloat(stats.quotes.USD.market_cap)
     .toLocaleString(undefined, {maximumFractionDigits: 0})} USD</p>`;
   statsCard.appendChild(capBox);
 
   const volumeBox = document.createElement('div');
   volumeBox.style.width = '30%';
   volumeBox.style.padding = '10px 0px';
-  volumeBox.innerHTML = (`<h6>Volume (24h)</h6><p>$${parseFloat(stats['24h_volume_usd'])
+  volumeBox.innerHTML = (`<h6>Volume (24h)</h6><p>$${parseFloat(stats.quotes.USD.volume_24h)
     .toLocaleString(undefined, {maximumFractionDigits: 0})} USD</p>`);
   statsCard.appendChild(volumeBox);
   
   statsContainer.appendChild(statsCard);
   sidePart.insertBefore(statsContainer, sidePart.children[2]);
   // change color of "price chnage in last 24 hours percent" based on its value
-  if (stats.percent_change_24h > 0) {
+  if (stats.quotes.USD.percent_change_24h > 0) {
     document.getElementById('change24h').style.color = 'green';
-  } else if (stats.percent_change_24h < 0) {
+  } else if (stats.quotes.USD.percent_change_24h < 0) {
     document.getElementById('change24h').style.color = 'red';
   } else {
     document.getElementById('change24h').style.color = '#fc8326';
