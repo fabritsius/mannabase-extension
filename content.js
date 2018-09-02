@@ -1,9 +1,9 @@
-window.onload = () => {
+setTimeout(() => {
   let username = document.getElementsByClassName('dashboard-card-container')[0]
     .getElementsByTagName('h5')[0].textContent.split(' ')[1];
   load(username);
   console.log('Extension works!');
-}
+}, 1000);
 
 // Main function
 function load(username) {
