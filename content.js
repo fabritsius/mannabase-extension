@@ -1,7 +1,9 @@
-let username = document.getElementsByClassName('dashboard-card-container')[0]
-  .children[0].getElementsByTagName('h5')[0].textContent.split(' ')[1];
-load(username);
-console.log('Extension works!');
+window.onload = () => {
+  let username = document.getElementsByClassName('dashboard-card-container')[0]
+    .getElementsByTagName('h5')[0].textContent.split(' ')[1];
+  load(username);
+  console.log('Extension works!');
+}
 
 // Main function
 function load(username) {
@@ -44,7 +46,7 @@ function load(username) {
 }
 
 function changeGreeting(newGreeting) {
-  const greetingMessage = document.getElementsByClassName('dashboard-card-container')[0].children[0].getElementsByTagName('h5')[0];
+  const greetingMessage = document.getElementsByClassName('dashboard-card-container')[0].getElementsByTagName('h5')[0];
   const greetingHTML = newGreeting.replace('[', '<span style="color:#fc8326;">').replace(']', '</span>');
   greetingMessage.innerHTML = greetingHTML;
 }
@@ -59,6 +61,7 @@ function improveUI() {
   const sidePart = document.getElementsByClassName('col-md-5 float-right-md')[0];
   const distrContainer = document.createElement('div');
   distrContainer.setAttribute('class', 'distribution-container dashboard-card-container');
+  distrContainer.style['margin-top'] = '30px';
   
   sidePart.children[1].setAttribute('class', 'referral-container dashboard-card-container');
   sidePart.insertBefore(distrContainer, sidePart.children[1]);
@@ -78,7 +81,7 @@ function improveUI() {
     distrCard.removeChild(distrCard.lastChild);
   }
   distrCard.lastChild.classList.remove('md-margin-vertical');
-  distrCard.lastChild.classList.add('md-margin-top');
+  // distrCard.lastChild.classList.add('md-margin-top');
   // change Selection Background Color
   const castomStyle = document.createElement('style');
   castomStyle.innerHTML = "::selection {\n    background-color: #e0eaff;\n}";
@@ -92,6 +95,7 @@ function addMarketStats(statsJSON) {
   const sidePart = document.getElementsByClassName('col-md-5 float-right-md')[0];
   const statsContainer = document.createElement('div');
   statsContainer.setAttribute('class', 'market-stats-constainer dashboard-card-container');
+  statsContainer.style['margin-top'] = '30px';
   
   const statsCard = document.createElement('div');
   statsCard.setAttribute('class', 'card bg-white lg-padding z-1');
