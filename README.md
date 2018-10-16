@@ -7,7 +7,9 @@ With this extension you can:
 - improve UI a bit (some parts are just unnecessary, while others just can be made better);
 - add basic stats about Manna stock.
 
-The result will look something like [this](https://fabritsius.github.io/mannabase-extension/imgs/mannabase-extension.png).
+The result will look something like:
+
+![this](https://fabritsius.github.io/mannabase-extension/imgs/mannabase-extension.png).
 
 (All changes above are optional).
 
